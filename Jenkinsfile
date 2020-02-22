@@ -3,25 +3,21 @@ pipeline
 agent any
 stages
 {
-stage
+stage('scm checkout')
 {
-  steps('scm checkout')
+  steps
   {
     git branch: 'master', url: "https://github.com/gunjannn/Ant-WebProject"
  }
  }
 
-stage
+stage('deploy to tomcat')
 {
-steps('deploy to tomcat')
+steps
 {
+
 withAnt(jdk: 'localjdk') 
-{
-   sshagent (['tomcat']) 
-	 {
-     sh 'scp -o StrictHostKeyChecking=no */target/*.war ec2-user@172.31.92.121:/usr/share/tomcat/webapps/'
-    }
- }
+}
 }
 }
 }
