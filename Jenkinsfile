@@ -11,7 +11,7 @@ stage('scm checkout')
  }
  }
 
-stage('deploy to tomcat')
+stage('ant build')
 {
 steps
 {
