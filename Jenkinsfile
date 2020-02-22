@@ -15,8 +15,8 @@ stage('deploy to tomcat')
 {
 steps
 {
-
-withAnt(jdk: 'localjdk') 
+withAnt(installation: 'LocalAnt')
+sh "ant build"
 }
 }
 }
