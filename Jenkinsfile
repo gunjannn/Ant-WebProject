@@ -15,7 +15,7 @@ stage('ant build')
 {
 steps
 {
-withAnt(installation: 'LocalAnt')
+withAnt(installation: 'localAnt')
 sh "ant build"
 }
 }
