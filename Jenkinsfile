@@ -15,7 +15,7 @@ stage('ant build')
 {
 steps
 {
-withAnt(installation: 'localAnt')
+withAnt(installation: 'localAnt', jdk: 'localjdk')
 sh "ant -f build.xml -v"
 }
 }
